@@ -14,7 +14,7 @@ public class conT {
 		
 		new ImageJ();
 		Trajectory geo=new Trajectory();
-		
+		//for github
 		//int a=geo.setReconDimensionX(265);
 		geo.setReconDimensionY(256);
 		geo.setReconDimensionZ(256);
