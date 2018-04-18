@@ -33,7 +33,7 @@ import edu.stanford.rsl.conrad.utils.RegKeys;
  *
  * <h1>Projection Matrix</h1>
  *
- * A 3x4 projection matrix P transforms a world coordinate point v (given in homogeneous
+ * A 3x4 projection matrix P transforms a world coordinate (object..) point v (given in homogeneous
  * coordinates) into a image pixel coordinate p (also in homogeneous coordinates):
  * {@latex.ilb \\[
  *   \\mathbf{P} \\cdot \\mathbf{v} = \\mathbf{p}
@@ -73,14 +73,14 @@ import edu.stanford.rsl.conrad.utils.RegKeys;
  * This choice is arbitrary. But since a choice has to be made anyways
  * and to avoid complicating the internal formulas, we have chosen this convention.
  * 
- * <p>If your P matrix returns a negative third coordinate for a voxel which which should
+ * <p>If your P matrix returns a negative third coordinate for a voxel which should
  * be visible, then just multiply the whole matrix by -1 before using it with this
  * class. It should then fulfill the condition {@latex.inline $\\mathbf{P}_3 \\cdot \\mathbf{v} > 0$}
  * for all voxels in front of the camera. Note that this negative scaling does not affect the
  * resulting pixel coordinate (due to the homogeneous division) but only flips the visibility
  * coordinate.
  * 
- * <p>Note that the 3x4 matrix does does not rely on a definition of a camera coordinate
+ * <p>Note that the 3x4 matrix does not rely on a definition of a camera coordinate
  * system but merely is a direct mapping from world coordinates to pixels. Therefore,
  * there is also no notion of "viewing in +z or -z direction". For understanding the
  * structure and effect of 3x4 projection matrix (using an intermediate camera
